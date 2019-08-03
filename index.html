@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Buscar CEP</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+	<div class="container mt-5">
+		<h2>Buscar Informações do CEP</h2>
+		<div class="form-group">
+			<input type="text" ng-model="dado" placeholder="Informe o Cep">
+			<button ng-click="buscar()">Buscar</button>
+		</div>
+
+		<div ng-show="cond">
+			<h2>Dados do cep</h2>
+
+			<table class="table mt-3">
+				<tr>
+					<th>CEP</th>
+					<th>LOGRADOURO</th>
+					<th>COMPLEMENTO</th>
+					<th>BAIRRO</th>
+					<th>LOCALIDADE</th>
+					<th>UF</th>
+					<th>UNIDADE</th>
+					<th>IBGE</th>
+				</tr>
+				<tr ng-if="ceps">
+					<td>{{ceps.cep}}</td>
+					<td>{{ceps.logradouro}}</td>
+					<td>{{ceps.complemento}}</td>
+					<td>{{ceps.bairro}}</td>
+					<td>{{ceps.localidade}}</td>
+					<td>{{ceps.uf}}</td>
+					<td>{{ceps.unidade}}</td>
+					<td>{{ceps.ibge}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
